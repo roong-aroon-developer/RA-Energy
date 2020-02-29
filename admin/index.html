@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <script defer src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.9.2/firebase-analytics.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+</head>
+<body>
+    <div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				<h1>Login</h1>
+			</div>
+
+			<div class="login-form">
+				<div class="control-group">
+				<input type="email" class="login-field" value="" placeholder="email" id="login-name">
+				<label class="login-field-icon fui-user" for="login-name"></label>
+				</div>
+
+				<div class="control-group">
+				<input type="password" class="login-field" value="" placeholder="password" id="login-pass">
+				<label class="login-field-icon fui-lock" for="login-pass"></label>
+				</div>
+
+				<a class="btn btn-primary btn-large btn-block" id="sign-in">login</a>
+			</div>
+		</div>
+	</div>
+</body>
+<script defer type="text/javascript" src="../config.js"></script>
+<script defer type="text/javascript" src="script.js"></script>
+<script>
+    document.getElementById('sign-in').onclick = (e) => {
+        e.preventDefault();
+        let usr = document.getElementById('login-name').value
+        let pas = document.getElementById('login-pass').value
+        signInHandler(usr, pas)
+    }
+</script>
+</html>
